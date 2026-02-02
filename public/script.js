@@ -1,17 +1,34 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const candles = document.querySelectorAll('.candle');
-  const hiddenCard = document.getElementById('hidden');
+// GET ELEMENTS
+const hour = document.getElementById("hour");
+const minute = document.getElementById("minute");
+const dateText = document.getElementById("date");
+const lock = document.getElementById("lock");
+const profile = document.getElementById("profile");
+const screen = document.getElementById("screen");
 
-  candles.forEach(candle => {
-    candle.addEventListener('click', () => {
-      candle.classList.toggle('lit');
+// UPDATE TIME
+function updateTime() {
+  const now = new Date();
 
-      const allLit = Array.from(candles).every(c => c.classList.contains('lit'));
-      if (allLit) {
-        hiddenCard.classList.add('show'); 
-      } else {
-        hiddenCard.classList.remove('show'); 
-      }
-    });
-  });
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+
+  if (hours < 10) hours = "0" + hours;
+  if (minutes < 10) minutes = "0" + minutes;
+
+  hour.textContent = hours;
+  minute.textContent = minutes;
+
+  const options = { weekday: "short", day: "numeric", month: "long" };
+  dateText.textContent = now.toLocaleDateString(undefined, options);
+}
+
+// RUN CLOCK
+updateTime();
+setInterval(updateTime, 1000);
+
+// UNLOCK PHONE
+screen.addEventListener("click", () => {
+  lock.classList.add("up");
+  profile.classList.add("show");
 });

@@ -1,53 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+@font-face {
+  font-family: Calinastiya;
+  src: url('Calinastiya\ demo.ttf');
+}
+
+@font-face {
+  font-family: Milven;
+  src: url('Milven-Regular.otf');
 }
 
 body {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: Helvetica, Arial, sans-serif;
-  background: silver;
-  color: #050542;
+  background-color: black;
 }
 
-header {
-  padding: 0.5rem;
-  background: #A675F5;
+#hidden {
+  opacity: 0;          
+  transition: opacity 0.5s ease-in-out;
+}
+
+#hidden.show {
+  opacity: 1;        
+}
+
+.shape {
+  width: 600px;
+  height: 300px;
+  background-color: black;
+  margin-right: auto;
+  margin-left: auto;
+  border: 5px solid #fff;
+  border-radius: 40px;
+  box-shadow: 0 0 50px 5px #fff;
+  translate: 0 -700px;
+  position: relative;
+  z-index: 1;
+}
+
+.foto {
+  position: relative;
+  width: 170px;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  translate: 850px -270px;
+  z-index: 2;
+}
+
+.naam {
+  z-index: 2;
   color: white;
-
-  h1 {
-    text-transform: uppercase;
-  }
+  font-family: Milven;
+  font-size: 55px;
+  translate: 475px 50px;
+  position: relative;
 }
 
-article {
+.bday {
+  z-index: 2;
+  color: white;
+  font-family: Milven;
+  font-size: 50px;
+  translate: 475px -10px;
+  position: relative;
+}
+
+.woonplaats {
+  z-index: 2;
+  color: white;
+  font-family: Milven;
+  font-size: 50px;
+  translate: 475px -65px;
+  position: relative;
+}
+
+.quote {
+  z-index: 2;
+  color: white;
+  font-family: Milven;
+  font-size: 50px;
+  translate: 475px -370px;
+  position: relative;
+}
+
+.cake {
   display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  width: 20rem;
-  aspect-ratio: 1/1;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background: white;
-  text-align: center;
-  transform-origin: center;
-  transform: rotate(2deg);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  > p {
-    font-size: 2rem;
-    font-family: 'Permanent Marker', cursive;
-    transform-origin: center;
-    transform: rotate(-6deg);
-    word-break: break-all;
-  }
+  flex-direction: column;
+  position: relative;
+  width: 550px;
+  margin:50px auto;
 }
 
-footer {
-  height: 1rem;
-  background: #A675F5;
+.icing {
+  width: 560px;
+  height: 200px;
+  position: relative;
+  z-index:5;
+  translate: 0 -750px;
+  margin-left: -5px;
+}
+
+.layer {
+  position:relative;
+  width: 550px;
+  border-radius: 50% / 20%;
+  height:175px;
+  translate:0 0px;
+  z-index:1;
+  background-color: blue;
+  border: 2px solid black;
+}
+
+.layer1 {
+  z-index:4;
+  background-color: #522a1a;
+  translate: 0 -900px;
+  border: 5px solid black;
+}
+
+.layer2 {
+  z-index:3;
+  background-color:#673824;
+  translate: 0 -950px;
+  border: 5px solid black;
+}
+
+.layer3 {
+  z-index:2;
+  background-color: #522a1a;
+  translate: 0 -1000px;
+  border: 5px solid black;
+}
+
+.candle {
+  color: white;
+  text-align: center;
+  translate: 180px -640px;
+  z-index: 6;
+  font-size: 80px;
+  font-family: Milven;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.flame {
+  position: absolute;
+  top: -35px; 
+  left: -10px;
+  right: 0px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 7;
+}
+
+.candle.lit .flame {
+  opacity: 1;
 }

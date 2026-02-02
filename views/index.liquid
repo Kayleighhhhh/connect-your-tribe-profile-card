@@ -1,14 +1,41 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
+    <div id="hidden">
+      <h1 class="naam">{{ person.name }}</h1>
+      <h3 class="bday">28 mei</h3>
+      <h3 class="woonplaats">Heerhugowaard</h3>
+      <img src="Snapchat-484455617.jpg" class="foto">
+      <h2 class="quote">Yu gonplei ste odon.</h2>
+      <div class="shape"></div>
+    </div>
 
-  <p>{{ person.name }}</p>
+    <div class="cake">
+      <div> 
+       <span class="candle" role="button" aria-label="F">
+         F
+         <img src="flame.svg" class="flame">
+       </span>
+       <span class="candle" role="button" aria-label="D">
+         D
+         <img src="flame.svg" class="flame">
+       </span>
+       <span class="candle" role="button" aria-label="N">
+         N
+         <img src="flame.svg" class="flame">
+       </span>
+       <span class="candle" role="button" aria-label="D">
+         D
+         <img src="flame.svg" class="flame">
+       </span>
+     </div>
 
-  <footer></footer>
-</article>
+
+      <img src="Icing2.png" class="icing">
+      <div class="layer layer1"></div>
+      <div class="layer layer2"></div>
+      <div class="layer layer3"></div>
+    </div>
+   
+    
 
 {% render 'partials/foot.liquid' %}

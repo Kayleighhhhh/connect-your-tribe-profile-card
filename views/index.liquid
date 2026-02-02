@@ -1,41 +1,33 @@
 {% render 'partials/head.liquid' %}
 
-    <div id="hidden">
-      <h1 class="naam">{{ person.name }}</h1>
-      <h3 class="bday">{{ person.birthdate }}</h3>
-      <h3 class="woonplaats">Heerhugowaard</h3>
-      <img src="{{ person.avatar }}" class="foto">
-      <h2 class="quote">{{ person.bio }}</h2>
-      <div class="shape"></div>
-    </div>
+   <main class="phone">
+  <section class="screen" id="screen">
 
-    <div class="cake">
-      <div> 
-       <span class="candle" role="button" aria-label="F">
-         F
-         <img src="flame.svg" class="flame">
-       </span>
-       <span class="candle" role="button" aria-label="D">
-         D
-         <img src="flame.svg" class="flame">
-       </span>
-       <span class="candle" role="button" aria-label="N">
-         N
-         <img src="flame.svg" class="flame">
-       </span>
-       <span class="candle" role="button" aria-label="D">
-         D
-         <img src="flame.svg" class="flame">
-       </span>
-     </div>
+    <!-- Lock screen -->
+    <section class="lock" id="lock" aria-label="Lock screen">
 
+      <header class="status">
+        <span class="carrier">Vodafone NL</span>
+        <span class="battery" aria-label="Battery level">🔋100%</span>
+      </header>
 
-      <img src="Icing2.png" class="icing">
-      <div class="layer layer1"></div>
-      <div class="layer layer2"></div>
-      <div class="layer layer3"></div>
-    </div>
-   
-    
+      <time class="date" id="date" aria-label="Current date"></time>
+
+      <div class="time"> <div id="hour">00</div> <div id="minute">00</div> </div>
+
+      <p class="hint">Tap to unlock</p>
+    </section>
+
+    <!-- Profile screen -->
+    <section class="profile" id="profile" aria-label="User profile">
+      <img src="{{ person.avatar }}" class="avatar">
+      <h1>{{ person.name }}</h1>
+      <p>{{ person.bio }}</p>
+      <p>{{ person.birthdate }}</p>
+      <p>{{ person.favorite_color }}</p>
+    </section>
+
+  </section>
+</main>   
 
 {% render 'partials/foot.liquid' %}

@@ -1,162 +1,126 @@
+/* RESET */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-@font-face {
-  font-family: Calinastiya;
-  src: url('Calinastiya\ demo.ttf');
-}
-
-@font-face {
-  font-family: Milven;
-  src: url('Milven-Regular.otf');
-}
-
+/* 🌈 BACKGROUND GRADIENT (OUTSIDE PHONE) */
 body {
-  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at bottom right,
+    #c800ff,
+    #32003f,
+    #0a0014
+  );
 }
 
-#hidden {
-  opacity: 0;          
-  transition: opacity 0.5s ease-in-out;
+/* PHONE BODY */
+.phone {
+  width: 320px;
+  height: 640px;
+  background: black;
+  border-radius: 35px;
+  padding: 10px;
 }
 
-#hidden.show {
-  opacity: 1;        
-}
-
-.shape {
-  width: 600px;
-  height: 300px;
-  background-color: black;
-  margin-right: auto;
-  margin-left: auto;
-  border: 5px solid #fff;
-  border-radius: 40px;
-  box-shadow: 0 0 50px 5px #fff;
-  translate: 0 -700px;
+/* SCREEN (YOUR IMAGE GOES HERE) */
+.screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  overflow: hidden;
   position: relative;
-  z-index: 1;
-}
+  cursor: pointer;
 
-.foto {
-  position: relative;
-  width: 170px;
-  height: auto;
-  border: 1px solid black;
-  border-radius: 10px;
-  translate: 850px -270px;
-  z-index: 2;
-}
+  /* 🖼️ PUT YOUR IMAGE HERE */
+  background-image: url("Background1.jpg");
+  background-size: cover;
+  background-position: center;
 
-.naam {
-  z-index: 2;
   color: white;
-  font-family: Milven;
-  font-size: 55px;
-  translate: 475px 50px;
-  position: relative;
 }
 
-.bday {
-  z-index: 2;
-  color: white;
-  font-family: Milven;
-  font-size: 50px;
-  translate: 475px -10px;
-  position: relative;
+/* LOCK SCREEN */
+.lock {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  padding-top: 1em;
+  transition: transform 0.7s ease;
 }
 
-.woonplaats {
-  z-index: 2;
-  color: white;
-  font-family: Milven;
-  font-size: 50px;
-  translate: 475px -65px;
-  position: relative;
+/* STATUS BAR */
+.status {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5em 1em 1.5em;
+  font-size: .8em;
+  opacity: 0.85;
 }
 
-.quote {
-  z-index: 2;
-  color: white;
-  font-family: Milven;
-  font-size: 50px;
-  translate: 475px -370px;
-  position: relative;
+/* DATE (MOVED UP) */
+.date {
+  font-size: 1em;
+  color: #f0caff;
 }
 
-.cake {
+/* TIME (MOVED UP) */
+.time {
+  margin-top: .1em;
+  font-size: 90px;
+  font-weight: bold;
+  line-height: 0.9;
+  background: linear-gradient(#e260ff, #ab2cfa);
+  background-clip: text;
+  color: transparent;
+}
+
+/* TAP TEXT */
+.hint {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* UNLOCKED SCREEN */
+.profile {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   flex-direction: column;
-  position: relative;
-  width: 550px;
-  margin:50px auto;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  transition: transform 0.7s ease;
+
+  .avatar {
+    height: 10em;
+    width: auto;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
 }
 
-.icing {
-  width: 560px;
-  height: 200px;
-  position: relative;
-  z-index:5;
-  translate: 0 -750px;
-  margin-left: -5px;
+/* 🔓 UNLOCK ANIMATIONS */
+.lock.up {
+  transform: translateY(-100%);
 }
 
-.layer {
-  position:relative;
-  width: 550px;
-  border-radius: 50% / 20%;
-  height:175px;
-  translate:0 0px;
-  z-index:1;
-  background-color: blue;
-  border: 2px solid black;
-}
-
-.layer1 {
-  z-index:4;
-  background-color: #522a1a;
-  translate: 0 -900px;
-  border: 5px solid black;
-}
-
-.layer2 {
-  z-index:3;
-  background-color:#673824;
-  translate: 0 -950px;
-  border: 5px solid black;
-}
-
-.layer3 {
-  z-index:2;
-  background-color: #522a1a;
-  translate: 0 -1000px;
-  border: 5px solid black;
-}
-
-.candle {
-  color: white;
-  text-align: center;
-  translate: 180px -640px;
-  z-index: 6;
-  font-size: 80px;
-  font-family: Milven;
-  font-weight: bold;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-}
-
-.flame {
-  position: absolute;
-  top: -35px; 
-  left: -10px;
-  right: 0px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  z-index: 7;
-}
-
-.candle.lit .flame {
-  opacity: 1;
+.profile.show {
+  transform: translateY(0);
 }

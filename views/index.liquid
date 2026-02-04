@@ -12,19 +12,37 @@
       </header>
 
       <time class="date" id="date" aria-label="Current date"></time>
-
       <div class="time"> <div id="hour">00</div> <div id="minute">00</div> </div>
-
       <p class="hint">Tap to unlock</p>
     </section>
 
     <!-- Profile screen -->
     <section class="profile" id="profile" aria-label="User profile">
+
+      <header class="status">
+        <span class="carrier">Vodafone NL</span>
+        <span class="battery" aria-label="Battery level">🔋100%</span>
+      </header>
+
       <img src="{{ person.avatar }}" class="avatar">
       <h1>{{ person.name }}</h1>
       <p>{{ person.bio }}</p>
       <p>{{ person.birthdate }}</p>
       <p>{{ person.favorite_color }}</p>
+    </section>
+
+    <section class="home" id="home" aria-label="home screen">
+
+      <header class="status">
+        <span class="carrier">Vodafone NL</span>
+        <span class="battery" aria-label="Battery level">🔋100%</span>
+      </header>
+
+      <img src="mermaidonmars.jpg" class="widget">
+      <img src="{{ person.avatar }}" class="aboutme" id="aboutMe">
+      <details class="map">
+        <a href="https://kayleighhhhh.github.io/fix-the-flow-interactive-website/catalog.html"><img src="efm.png" class="imges"></a>
+        <a href="https://kayleighhhhh.github.io/the-startup-responsive-interactive-website/"><img src="radioguide.png" class="imges"></a>
     </section>
 
   </section>

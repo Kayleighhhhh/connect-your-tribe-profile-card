@@ -1,0 +1,16 @@
+{% render 'partials/head.liquid' %}
+
+<h1>Data-Driven Web</h1>
+
+<p>Ik ben dus {{ person.name }}</p>
+
+<p>mijn favo kleur is {{ person.custom.favorite_color }}</p>
+
+<p>Het is vandaag {{ 'now' | date: '%a, %b %d, %y' }}</p>
+
+<p>Ik ben jarig op {{ person.birthdate | date: '%d %b' }}</p>
+
+
+
+
+{% render 'partials/foot.liquid' %}

@@ -13,10 +13,9 @@ body {
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle at bottom right,
-    #c800ff,
-    #32003f,
-    #0a0014
-  );
+      #c800ff,
+      #32003f,
+      #0a0014);
 }
 
 /* PHONE BODY */
@@ -95,7 +94,7 @@ body {
   background: rgb(0, 0, 0);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content max-content 1fr;
+  grid-template-rows: max-content max-content 1fr 1fr;
   transform: translateY(100%);
   transition: transform 0.7s ease;
 
@@ -112,19 +111,49 @@ body {
     grid-column: 1/-1;
   }
 
+  a {
+    place-self: center;
+  }
+
   .aboutme {
-    height: 8em;
-    width: auto;
+    height: 7em;
+    width: 7em;
     border-radius: 35px;
     grid-column: 1;
     grid-row: 3;
+    justify-self: center;
+    align-self: center;
+
   }
 
-  .imges {
-    height: 10em;
-    width: auto;
+  .iloveweb {
+    height: 7em;
+    width: 7em;
+    border-radius: 35px;
     grid-column: 2;
     grid-row: 3;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .efm {
+    height: 7em;
+    width: 7em;
+    border-radius: 35px;
+    grid-column: 1;
+    grid-row: 4;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .radio {
+    height: 7em;
+    width: 7em;
+    border-radius: 35px;
+    grid-column: 2;
+    grid-row: 4;
+    justify-self: center;
+    align-self: center;
   }
 }
 

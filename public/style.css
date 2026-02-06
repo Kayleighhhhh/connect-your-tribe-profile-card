@@ -105,7 +105,7 @@ body {
     height: 15em;
     width: 17em;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
     border-radius: 35px;
     grid-row: 2;
     grid-column: 1/-1;

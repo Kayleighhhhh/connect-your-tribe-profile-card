@@ -160,6 +160,9 @@ body {
 .profile {
   position: absolute;
   inset: 0;
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns: 100%;
   padding-top: .5em;
   background: rgba(0, 0, 0, 0.75);
   justify-content: center;
@@ -170,10 +173,14 @@ body {
   .avatar {
     height: 10em;
     width: auto;
+    border-radius: 35px;
+    justify-self: center;
+    align-self: center;
   }
 
-  h1 {
+  .name {
     text-align: center;
+    font-size: 26px;
   }
 
   p {
